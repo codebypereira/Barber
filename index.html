@@ -8,8 +8,8 @@
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; background: #090909; color: #f4f1eb; font-family: system-ui, sans-serif; }
-    main { display: grid; grid-template-columns: 1fr 1fr; min-height: 100svh; max-width: 1440px; margin: auto; }
-    .portrait { position: relative; background: #050505; min-height: 100%; }
+    main { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; }
+    .portrait { position: relative; background: #050505; min-height: clamp(28rem, 65svh, 40rem); }
     .portrait-photo { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
     .portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 75%, #090909); }
     .monogram { position: absolute; z-index: 1; left: 50%; bottom: clamp(1rem, 4vw, 3rem); transform: translateX(-50%); width: clamp(11rem, 58%, 25rem); aspect-ratio: 1.5; overflow: hidden; mix-blend-mode: screen; }
@@ -18,17 +18,21 @@
     .label, .status { font-size: .72rem; font-weight: 650; letter-spacing: .17em; text-transform: uppercase; color: #bab6ae; }
     h1 { margin: .18em 0; font-size: clamp(3rem, 7vw, 7rem); letter-spacing: -.075em; line-height: .95; }
     .signature { margin: 1.2rem 0; font-size: clamp(1.3rem, 2.4vw, 2rem); font-weight: 600; }
-    .bio { max-width: 44ch; color: #c8c4bd; line-height: 1.7; }
-    .bio h2 { margin: 1.5rem 0 .75rem; font-size: .8rem; letter-spacing: .12em; color: #f4f1eb; }
-    .course { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; margin-top: 2rem; border-block: 1px solid #383530; }
+    .bio, .course { grid-column: 1 / -1; }
+    .bio { background: #f4efe6; color: #28241f; line-height: 1.75; padding: clamp(2.5rem, 6vw, 5rem) 1.5rem; }
+    .bio > * { max-width: 58ch; margin-inline: auto; }
+    .bio h2 { margin-block: 0 1.5rem; font-size: 1rem; letter-spacing: .12em; max-width: 58ch; }
+    .bio p { margin-block: 0 1.25rem; }
+    .bio p:last-child { margin-bottom: 0; }
+    .course { display: flex; justify-content: center; align-items: center; gap: 1.25rem; padding: 2rem 1.5rem; background: #252422; }
     .course strong { display: block; margin-bottom: .2rem; }
     .shapes { flex: none; color: #ede8dc; }
     @media (max-width: 720px) {
       main { display: block; }
-      .portrait { height: clamp(19rem, 58svh, 34rem); }
+      .portrait { min-height: 0; height: clamp(19rem, 58svh, 34rem); }
       .portrait::after { background: linear-gradient(transparent 72%, #090909); }
       .monogram { width: clamp(10rem, 58%, 17rem); bottom: 0; }
-      .intro { padding: 0 1.5rem 2.5rem; }
+      .intro { padding: 0 1.5rem 2.5rem; text-align: center; }
     }
   </style>
 </head>
@@ -42,28 +46,26 @@
       <p class="label">Barbeiro e educador · Porto</p>
       <h1 id="nome">SURIANO</h1>
       <p class="signature">Prever antes de executar.</p>
-      <div class="bio">
-        <h2>QUEM SOU EU?</h2>
-        <p>Suriano é barbeiro, educador e criador do Método SCULPT.</p>
-        <p>Através desta metodologia, ensina barbeiros a compreenderem o porquê de cada técnica, desenvolvendo uma visão mais estratégica e intencional na construção dos cortes.</p>
-        <p>O objetivo é fazer com que cada profissional compreenda a geometria, as formas e as elevações, tornando-se capaz de antecipar o resultado final antes mesmo de tocar no cabelo.</p>
-        <p>Atualmente vive em Portugal, onde é proprietário de uma barbearia no Porto, conciliando a prática profissional com a missão de elevar o nível técnico da barbearia através da educação.</p>
-      </div>
-      <div class="course">
-        <svg class="shapes" width="66" height="20" viewBox="0 0 66 20" fill="currentColor" aria-hidden="true">
-          <path d="M10 2 20 18H0Z"/>
-          <circle cx="33" cy="10" r="8"/>
-          <path d="M50 2h16v16H50z"/>
-        </svg>
-        <div>
-          <strong>Método SCULPT</strong>
-          <span class="status">Curso em breve</span>
-        </div>
-      </div>
     </section>
+    <section class="bio" aria-labelledby="bio-titulo">
+      <h2 id="bio-titulo">QUEM SOU EU?</h2>
+      <p>Suriano é barbeiro, educador e criador do Método SCULPT.</p>
+      <p>Através desta metodologia, ensina barbeiros a compreenderem o porquê de cada técnica, desenvolvendo uma visão mais estratégica e intencional na construção dos cortes.</p>
+      <p>O objetivo é fazer com que cada profissional compreenda a geometria, as formas e as elevações, tornando-se capaz de antecipar o resultado final antes mesmo de tocar no cabelo.</p>
+      <p>Atualmente vive em Portugal, onde é proprietário de uma barbearia no Porto, conciliando a prática profissional com a missão de elevar o nível técnico da barbearia através da educação.</p>
+    </section>
+    <div class="course">
+      <svg class="shapes" width="66" height="20" viewBox="0 0 66 20" fill="currentColor" aria-hidden="true">
+        <path d="M10 2 20 18H0Z"/>
+        <circle cx="33" cy="10" r="8"/>
+        <path d="M50 2h16v16H50z"/>
+      </svg>
+      <div>
+        <strong>Método SCULPT</strong>
+        <span class="status">Curso em breve</span>
+      </div>
+    </div>
   </main>
 </body>
 </html>
-
-
 
