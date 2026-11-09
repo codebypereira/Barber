@@ -8,7 +8,7 @@ A página apresenta o profissional, sua trajetória e a proposta do método, que
 
 ## Página
 
-- Retrato em preto e branco com o monograma SC.
+- Retrato em preto e branco e monograma SC. abaixo da assinatura.
 - Nome em Great Vibes e assinatura do método.
 - Biografia completa com destaques em negrito sobre fundo off-white.
 - Bloco do Método SCULPT com a indicação “Curso em breve”.

@@ -4,7 +4,7 @@ main { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto a
 .portrait { position: relative; background: #050505; min-height: clamp(28rem, 65svh, 40rem); }
 .portrait-photo { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
 .portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 75%, #090909); }
-.monogram { position: absolute; z-index: 1; left: 50%; bottom: clamp(1rem, 4vw, 3rem); transform: translateX(-50%); width: clamp(11rem, 58%, 25rem); aspect-ratio: 1.5; overflow: hidden; mix-blend-mode: screen; }
+.monogram { position: relative; width: clamp(6rem, 12vw, 9rem); aspect-ratio: 1.5; margin-inline: auto; overflow: hidden; mix-blend-mode: screen; }
 .monogram img { position: absolute; width: 174%; max-width: none; height: auto; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 .intro { align-self: center; padding: clamp(2rem, 6vw, 6rem); }
 .label, .status { font-size: .72rem; font-weight: 650; letter-spacing: .17em; text-transform: uppercase; color: #bab6ae; }
@@ -23,6 +23,5 @@ h1 { margin: .18em 0; font-family: "Great Vibes", cursive; font-weight: 400; fon
   main { display: block; }
   .portrait { min-height: 0; height: clamp(19rem, 58svh, 34rem); }
   .portrait::after { background: linear-gradient(transparent 72%, #090909); }
-  .monogram { width: clamp(10rem, 58%, 17rem); bottom: 0; }
   .intro { padding: 0 1.5rem 2.5rem; text-align: center; }
 }
