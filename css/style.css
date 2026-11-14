@@ -38,3 +38,65 @@ h1 { margin: .18em 0; font-family: "Great Vibes", cursive; font-weight: 400; fon
   .portrait::after { background: linear-gradient(transparent 72%, #090909); }
   .intro { padding: 0 1.5rem 2.5rem; }
 }
+
+.cuts {
+  grid-column: 1 / -1;
+  padding: clamp(2.5rem, 6vw, 5rem) 1.5rem;
+  background: #ebe5da;
+  color: #28241f;
+}
+
+.cuts-content {
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+.cuts h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.cuts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cut-card {
+  overflow: hidden;
+  border: 1px solid #cfc6b8;
+  border-radius: .65rem;
+  background: #f4efe6;
+}
+
+.cut-photo {
+  aspect-ratio: 4 / 3;
+  background: #d8d0c3;
+}
+
+img.cut-photo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cut-card p {
+  margin: 0;
+  padding: 1rem;
+  font-weight: 650;
+}
+
+.cut-card span {
+  display: block;
+  margin-top: .25rem;
+  color: #625a50;
+  font-size: .85rem;
+  font-weight: 400;
+}
+
+@media (max-width: 720px) {
+  .cuts-grid { grid-template-columns: 1fr; }
+}
