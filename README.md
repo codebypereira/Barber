@@ -28,8 +28,9 @@ Baixe ou clone o repositório e abra o arquivo `index.html` no navegador. Manten
 | --- | --- |
 | `index.html` | Estrutura e textos da página |
 | `css/style.css` | Estilos e regras de responsividade |
-| `images/suriano.jpeg` | Retrato de Suriano |
-| `images/sc.png` | Monograma do Método SCULPT |
+| `images/suriano-retrato.jpeg` | Retrato de Suriano |
+| `images/suriano-tesoura.jpeg` | Foto de Suriano na seção do curso |
+| `images/sculpt-monograma.png` | Monograma do Método SCULPT |
 | `LICENSE` | Licença do repositório |
 
 ## Editar a página
